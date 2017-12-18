@@ -940,11 +940,11 @@ public class ShowGraph extends PApplet implements MouseWheelListener {
     }
 
     private double toScreenY(double y) {
-        return map(y, modelBounds.getMinY(), modelBounds.getMaxY(), getSize().height, 0);
+        return map((float)y, (float)(modelBounds.getMinY()), (float)(modelBounds.getMaxY()), (float)(getSize().height), 0.0f);
     }
 
     private double toScreenX(double x) {
-        return map(x, modelBounds.getMinX(), modelBounds.getMaxX(), 0, getSize().width);
+        return map((float)x, (float)(modelBounds.getMinX()), (float)(modelBounds.getMaxX()), 0.0f, (float)(getSize().width));
     }
 
     public void keyPressed() {
@@ -995,11 +995,11 @@ public class ShowGraph extends PApplet implements MouseWheelListener {
     }
 
     private double toModelY(double y) {
-        return map(y, 0, getSize().height, modelBounds.getMaxY(), modelBounds.getMinY());
+        return map((float)y, 0.0f, (float)(getSize().height), (float)(modelBounds.getMaxY()), (float)(modelBounds.getMinY()));
     }
 
     private double toModelX(double x) {
-        return map(x, 0, getSize().width, modelBounds.getMinX(), modelBounds.getMaxX());
+        return map((float)x, 0.0f, (float)(getSize().width), (float)(modelBounds.getMinX()), (float)(modelBounds.getMaxX()));
     }
 
     /**

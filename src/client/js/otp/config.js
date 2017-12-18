@@ -122,12 +122,12 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "My OTP Instance",
-    siteDescription     : "An OpenTripPlanner deployment.",
-    logoGraphic         : 'images/otp_logo_darkbg_40px.png',
+    siteName            : "Jalan-SMRT",
+    siteDescription     : "Jalan deployment for SMRT",
+    logoGraphic         : 'images/smrt-squarelogo.png',
     // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
-    showLanguageChooser : true,
+    showLanguageChooser : false,
 
     showLogo            : true,
     showTitle           : true,
@@ -157,7 +157,11 @@ otp.config = {
         {
             id : 'analyst',
             className : 'otp.modules.analyst.AnalystModule'
-        }
+        },
+        {
+            id : 'bikeshare',
+            className : 'otp.modules.bikeshare.BikeShareModule',
+        },
     ],
     
     
@@ -331,8 +335,8 @@ otp.config.modes = {
     // IDEA: maybe we start with a big array (like below), and the pull out modes from this array when turning off various modes...
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
-    //    'WALK,BICYCLE_RENT'        :_tr('Rented Bicycle'),
+       'WALK,BICYCLE_RENT'        :_tr('Rented Bicycle'),
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
-    //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
+       'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };

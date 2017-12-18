@@ -267,7 +267,7 @@ public class InputStreamGraphSource implements GraphSource {
         @Override
         public InputStream getGraphInputStream() throws IOException {
             File graphFile = new File(path, GRAPH_FILENAME);
-            LOG.debug("Loading graph from file '{}'", graphFile.getPath());
+            LOG.info("Loading graph from file '{}'", graphFile.getPath());
             return new FileInputStream(graphFile);
         }
 
@@ -275,7 +275,7 @@ public class InputStreamGraphSource implements GraphSource {
         public InputStream getConfigInputStream() throws IOException {
             File configFile = new File(path, Router.ROUTER_CONFIG_FILENAME);
             if (configFile.canRead()) {
-                LOG.debug("Loading config from file '{}'", configFile.getPath());
+                LOG.info("Loading config from file '{}'", configFile.getPath());
                 return new FileInputStream(configFile);
             } else {
                 return null;
@@ -300,7 +300,7 @@ public class InputStreamGraphSource implements GraphSource {
         @Override
         public InputStream getGraphInputStream() {
             File graphFile = new File(path, GRAPH_FILENAME);
-            LOG.debug("Loading graph from classpath at '{}'", graphFile.getPath());
+            LOG.info("Loading graph from classpath at '{}'", graphFile.getPath());
             return Thread.currentThread().getContextClassLoader()
                     .getResourceAsStream(graphFile.getPath());
         }
@@ -308,7 +308,7 @@ public class InputStreamGraphSource implements GraphSource {
         @Override
         public InputStream getConfigInputStream() {
             File configFile = new File(path, Router.ROUTER_CONFIG_FILENAME);
-            LOG.debug("Trying to load config on classpath at '{}'", configFile.getPath());
+            LOG.info("Trying to load config on classpath at '{}'", configFile.getPath());
             return Thread.currentThread().getContextClassLoader()
                     .getResourceAsStream(configFile.getPath());
         }
