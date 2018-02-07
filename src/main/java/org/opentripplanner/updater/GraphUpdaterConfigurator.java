@@ -23,6 +23,7 @@ import org.opentripplanner.updater.example.ExamplePollingGraphUpdater;
 import org.opentripplanner.updater.stoptime.PollingStoptimeUpdater;
 import org.opentripplanner.updater.stoptime.WebsocketGtfsRealtimeUpdater;
 import org.opentripplanner.updater.street_notes.WinkkiPollingGraphUpdater;
+import org.opentripplanner.updater.telepod_rental.TelepodRentalUpdater;
 import org.opentripplanner.updater.traffic.OpenTrafficUpdater;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -86,6 +87,9 @@ public abstract class GraphUpdaterConfigurator {
             if (type != null) {
                 if (type.equals("bike-rental")) {
                     updater = new BikeRentalUpdater();
+                }
+                else if (type.equals("telepod-rental")) {
+                    updater = new TelepodRentalUpdater();
                 }
                 else if (type.equals("bike-park")) {
                     updater = new BikeParkUpdater();
