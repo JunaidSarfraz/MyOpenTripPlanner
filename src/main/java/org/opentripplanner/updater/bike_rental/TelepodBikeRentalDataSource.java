@@ -34,7 +34,7 @@ public class TelepodBikeRentalDataSource extends GenericJsonBikeRentalDataSource
         if (networkName != null && !networkName.isEmpty()) {
             this.networkName = networkName;
         } else {
-            this.networkName = "TelepodDev";
+            this.networkName = "Telepod";
         }
     }
 
@@ -49,7 +49,7 @@ public class TelepodBikeRentalDataSource extends GenericJsonBikeRentalDataSource
         brstation.id = stationNode.path("stationId").toString();
         brstation.x = stationNode.path("Lng").asDouble();
         brstation.y = stationNode.path("Lat").asDouble();
-        brstation.name =  new NonLocalizedString(stationNode.path("stationName").asText());
+        brstation.name =  new NonLocalizedString((networkName + " " + stationNode.path("stationName").asText()).toString());
         brstation.bikesAvailable = stationNode.path("scooterAvail").asInt();
         brstation.spacesAvailable = stationNode.path("dockingAvail").asInt();
 

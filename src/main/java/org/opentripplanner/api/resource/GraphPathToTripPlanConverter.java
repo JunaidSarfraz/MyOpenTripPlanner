@@ -541,6 +541,16 @@ public abstract class GraphPathToTripPlanConverter {
 
             if (mode != null) {
                 leg.mode = mode.toString();
+                
+                if (mode.toString().contains("BICYCLE")) {
+                    leg.modeRoute = state.getBikeRentalNetworks().iterator().next();
+                }
+                else if (mode.toString().contains("WALK")) {
+                    leg.modeRoute = "WALK";
+                }
+                else {
+                        leg.modeRoute = leg.routeLongName;
+                }
             }
 
             if (alerts != null) {

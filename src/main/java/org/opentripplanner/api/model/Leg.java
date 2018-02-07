@@ -124,6 +124,10 @@ public class Leg {
     @JsonSerialize
     public String routeColor = null;
 
+    @XmlAttribute
+    @JsonSerialize
+    public String modeRoute = "";    
+    
     /**
      * For transit legs, the type of the route. Non transit -1
      * When 0-7: 0 Tram, 1 Subway, 2 Train, 3 Bus, 4 Ferry, 5 Cable Car, 6 Gondola, 7 Funicular

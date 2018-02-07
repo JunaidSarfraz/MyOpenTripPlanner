@@ -114,6 +114,10 @@ public class BikeRentalUpdater extends PollingGraphUpdater {
                 source = new GbfsBikeRentalDataSource();
             } else if (sourceType.equals("telepoddev")) {
                 source = new TelepodBikeRentalDataSource(networkName);
+            } else if (sourceType.equals("OBike")) {
+                source = new OBikeRentalDataSource(networkName);
+            } else if (sourceType.equals("AnyWheel")) {
+                source = new AnyWheelBikeRentalDataSource(networkName);
             }
         }
 

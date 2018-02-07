@@ -1,0 +1,75 @@
+{
+  "routingDefaults": {
+    "numItineraries": 4,
+    "walkSpeed": 1.4,
+    "stairsReluctance": 3,
+    "carDropoffTime": 30,
+    "bikeRentalPickupCost" : 5,
+    "bikeRentalDropoffTime" : 20,
+    "bikeRentalPickupTime" : 30,
+    "bikeSpeed" : 4.1,
+    "walkReluctance" : 2.4,
+    "maxWalkDistance": 2414.0099999999998
+	
+  },
+  "updaters": [
+    {
+      "type": "bike-rental",
+      "frequencySec": 30,
+      "sourceType": "telepoddev",
+      "url": "http://188.166.191.16:3000/getAllStations?id=maas",
+      "network": "Telepod"
+    },
+    {
+      "type": "bike-rental",
+      "frequencySec": 30,
+      "sourceType": "OBike",
+      "url": "http://54.254.137.124:3000/smrt/api/v1/allObikes?session_id=OubNK4ltOchiMw9cIvZMTFYRL6TntpF1&countryCode=65&latitude=1.39593668&longitude=103.913801&seed=",
+      "network": "OBike"
+    },
+    {
+      "type": "bike-rental",
+      "frequencySec": 30,
+      "sourceType": "AnyWheel",
+      "url":"http://54.254.137.124:3000/smrt/api/v1/fetch_all_Wheels?session_id=OubNK4ltOchiMw9cIvZMTFYRL6TntpF1",
+      "network": "AnyWheel"
+    }    
+
+    // {
+    //   "type": "bike-rental",
+    //   "frequencySec": 10,
+    //   "sourceType": "telepoddev",
+    //   "url": "http://188.166.191.16:3000/getAllStations?id=maas",
+    //   //"url": "http://188.166.248.77:3000/getAllStations?id=maas",
+    //   "network": "Telepod"
+    // }//,
+    // {
+    //   "type": "bike-rental",
+    //   "frequencySec": 30,
+    //   "sourceType": "OBike",
+    //   "url":"file:///otp/OBike.json",
+    //   //"url": "https://api.jalan.sg/smrt/api/v1/allObikes?session_id=zdm7p93uGzjdm2v11BP7PN4Dr3nVNWNh&countryCode=65&latitude=1.39593668&longitude=103.913801&seed=",
+    //   //"url": "http://54.254.137.124:3000/smrt/api/v1/allObikes?session_id=zdm7p93uGzjdm2v11BP7PN4Dr3nVNWNh&countryCode=65&latitude=1.39593668&longitude=103.913801&seed=",
+    //   "network": "OBike"
+    // },
+    // {
+    //   "type": "bike-rental",
+    //   "frequencySec": 30,
+    //   "sourceType": "AnyWheel",
+    //   "url":"http://54.254.137.124:3000/smrt/api/v1/fetch_all_Wheels?session_id=zdm7p93uGzjdm2v11BP7PN4Dr3nVNWNh",
+    //   //"url":"file:///otp/AnyWheel.json",
+    //   //"url": "https://api.jalan.sg/smrt/api/v1/allObikes?session_id=zdm7p93uGzjdm2v11BP7PN4Dr3nVNWNh&countryCode=65&latitude=1.39593668&longitude=103.913801&seed=",
+    //   //"url": "http://54.254.137.124:3000/smrt/api/v1/allObikes?session_id=zdm7p93uGzjdm2v11BP7PN4Dr3nVNWNh&countryCode=65&latitude=1.39593668&longitude=103.913801&seed=",
+    //   "network": "AnyWheel"
+    // }//, 
+    // {
+    //   "type": "stop-time-updater",
+    //   "frequencySec": 60,
+    //   "sourceType": "gtfs-file",
+    //   //"url": "http://188.166.191.16:3000/getAllStations?id=maas",
+    //   "file": "sample_gtfs_otp.bin",
+    //   "feedId": "LTAMRT"
+    // }
+
+  ]
+}
